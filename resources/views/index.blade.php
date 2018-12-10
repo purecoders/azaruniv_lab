@@ -164,7 +164,10 @@
                                 <p class="rtl pt-2">
                                     {{$post->content}}
                                 </p>
-                                <span class="rtl jDate">{{$post->created_at}}</span>
+                                @php
+                                    $date = new \App\Http\Controllers\PersianDate();
+                                @endphp
+                                <span class="rtl jDate">{{$date->to_date($post->created_at, 'Y/m/d')}}</span>
                             </div>
                         </a>
                     </div>

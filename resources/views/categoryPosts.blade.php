@@ -38,7 +38,8 @@
                                 <p class="rtl pt-2">
                                    {{$newPost->content}}
                                 </p>
-                                <span class="rtl">13 آذر</span>
+                                @php($date = new \App\Http\Controllers\PersianDate())
+                                <span class="rtl">{{$date->to_date($newPost->created_at, 'Y/m/d')}}</span>
                             </div>
                         </a>
                     </div>
