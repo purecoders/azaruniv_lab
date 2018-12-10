@@ -32,7 +32,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
 
-                                        <input name="name" type="text" class="form-control"placeholder="نام" required>
+                                        <input name="name" type="text" class="form-control"placeholder="نام و نام خانوادگی" required>
                                     </div>
                                 </div>
 

@@ -48,7 +48,8 @@
 
 
 <!--Nav Bar-->
-<nav class="navbar navbar-expand-md navbar-light py-2 bg-dark  ">
+{{--<nav class="navbar navbar-expand-md navbar-light py-2 bg-dark  ">--}}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0 ">
     @guest
         <button class="btn bg-dark btn-outline-danger text-white" type="button" data-toggle="modal" data-target="#Modal">پنل ادمین</button>
     @else
@@ -62,23 +63,29 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav ml-auto ">
-                <li class="nav-item">
-                    <a href="{{route('contact')}}" class="nav-link" style="color:#ffffff">ارتباط با ما</a>
+                <li class="nav-item px-2">
+                    <a href="{{route('contact')}}" class="nav-link @if(request()->path() == 'contact') active @endif">ارتباط با ما</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{route('people')}}" class="nav-link" style="color:#ffffff">اعضا</a>
+                <li class="nav-item px-2">
+                    <a href="{{route('people')}}" class="nav-link @if(request()->path() == 'people') active @endif" >اعضا</a>
                 </li>
+
                 @php
                     $categories = \App\Category::all();
                 @endphp
                 @foreach($categories as $category)
-                    <li class="nav-item">
-                        <a href="{{route('category-posts', ['id' => $category->id])}}" class="nav-link" style="color:#ffffff">{{$category->name}}</a>
+                    <li class="nav-item px-2">
+                        <a href="{{route('category-posts', ['id' => $category->id])}}" class="nav-link @if(request()->path() == 'category/'.$category->id.'/posts') active @endif" >{{$category->name}}</a>
                     </li>
                 @endforeach
-                <li class="nav-item">
-                    <a href="{{route('index')}}" class="nav-link active" style="color: #f45341">خانه</a>
+
+                <li class="nav-item px-2">
+                    <a href="{{route('index')}}" class="nav-link @if(request()->path() ==='/') active @endif" >خانه</a>
                 </li>
+
+
+
+
             </ul>
         </div>
     </div>

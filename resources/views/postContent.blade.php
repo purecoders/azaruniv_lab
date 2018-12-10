@@ -28,8 +28,10 @@
                             <img src="{{asset($post->image_path)}}" alt="" class="img-fluid" style="width: 500px; height: 400px;">
                     </div>
                     <dir class="d-flex flex-row justify-content-between" id="titleBlock">
-                            
-                            <h6 class="mt-3 mr-1 d-none d-md-block text-muted jDate">{{$post->created_at}}</h6>
+                            @php
+                                $date = new \App\Http\Controllers\PersianDate();
+                            @endphp
+                            <h6 class="mt-3 mr-1 d-none d-md-block text-muted jDate">{{$date->to_date($post->created_at, 'Y/m/d')}}</h6>
                             <h3 class="rtl mt-3 mr-1  ">{{$post->title}}  </h3>
                     </dir>
 

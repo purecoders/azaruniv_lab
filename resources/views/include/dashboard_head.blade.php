@@ -31,17 +31,21 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
+
                 <li class="nav-item px-2">
-                    <a href="{{route('admin-posts')}}" class="nav-link">پست ها</a>
+                    <a href="{{route('admin-show-messages')}}" class="nav-link @if(request()->path() == 'admin-show-messages') active @endif">پیام ها</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="{{route('admin-navbar')}}" class="nav-link"> مدیریت دسته بندی ها</a>
+                    <a href="{{route('admin-posts')}}" class="nav-link @if(request()->path() == 'admin-posts') active @endif">پست ها</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="{{route('admin-add-people')}}" class="nav-link">مدیریت اساتید و دانشجویان</a>
+                    <a href="{{route('admin-navbar')}}" class="nav-link @if(request()->path() == 'admin-navbar') active @endif"> مدیریت دسته بندی ها</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="{{route('admin-dashboard')}}" class="nav-link active">داشبورد</a>
+                    <a href="{{route('admin-add-people')}}" class="nav-link @if(request()->path() == 'admin-add-people') active @endif">مدیریت اساتید و دانشجویان</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a href="{{route('admin-dashboard')}}" class="nav-link @if(request()->path() == 'admin-dashboard') active @endif">داشبورد</a>
                 </li>
             </ul>
         </div>

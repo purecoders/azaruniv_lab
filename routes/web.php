@@ -45,3 +45,4 @@ Route::post('/admin-insert-post', 'DashboardController@insertPost')->name('admin
 Route::get('/admin-remove-post/{id}', 'DashboardController@removePost')->name('admin-remove-post');
 Route::get('/admin-edit-post-form/{id}', 'DashboardController@editPostForm')->name('admin-edit-post-form');
 Route::post('/admin-edit-post', 'DashboardController@editPost')->name('admin-edit-post');
+Route::get('/admin-show-messages', 'DashboardController@showMessage')->name('admin-show-messages');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Member;
 use App\Post;
+use App\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -209,6 +210,13 @@ class DashboardController extends Controller
 
       return redirect(route('admin-posts'));
 
+    }
+
+
+
+    public function showMessage(){
+      $tickets = Ticket::orderBy('id', 'desc')->get();
+      return view('dashboard.messages', compact('tickets'));
     }
 }
 
